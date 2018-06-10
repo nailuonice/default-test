@@ -114,7 +114,10 @@ function run(gen){
 
 run(gen);*/
 
-var fs = require('fs');
+/*async 函数
+async 函数，一句话，它就是 Generator 函数的语法糖。
+上面的例子，写成async函数，就是下面这样：*/
+/*var fs = require('fs');
 
 var readFile = function (fileName){
     return new Promise(function (resolve, reject){
@@ -131,4 +134,4 @@ var asyncReadFile = async function (){
     console.log(f1.toString());
     console.log(f2.toString());
 };
-asyncReadFile();
+asyncReadFile();*/
