@@ -135,3 +135,9 @@ var asyncReadFile = async function (){
     console.log(f2.toString());
 };
 asyncReadFile();*/
+
+
+/*var arr = [1,2,3];
+for(var v of arr) {
+    console.warn(v);
+}*/
