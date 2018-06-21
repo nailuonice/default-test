@@ -5,17 +5,19 @@
 const router                                     = require("koa-router")();
 
 class Test {
-    static async findData(ctx) {
-        let data      = ctx.request.body;
+    static async test(ctx) {
+        let method = ctx.method;
+        var data = ("POST" === method) ? ctx.request.body : ctx.request.query;
+        // let data      = ctx.request.body;
         let parameter = ctx.state.parameter;
-        console.warn(ctx);
-        console.warn(data);
-        console.warn(parameter);
-        ctx.body = {a:1};
-        return ;
+        console.warn(method,data,ctx.request);
+        // console.warn(`come in test ${ctx.request.body}`);
+        console.warn('come in test '+JSON.stringify(data));
+        ctx.body = {data: data, code: true};
+        // return {test:1};
     }
 }
 
-router.post("/findData", Test.findData);
+router.all("/test", Test.test);
 
 module.exports = router;
