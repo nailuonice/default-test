@@ -245,6 +245,7 @@ let updates = [1,2,3],grayScalev = [];
 let {defaultV, a} = func1(updates);
 console.log(updates,defaultV,a);*/
 
+/*
 const db = {}
 function func1() {
   fs.readdirSync(__dirname)
@@ -258,4 +259,4 @@ function func1() {
     })
 
 }
-func1();
+func1();*/
