@@ -23,7 +23,11 @@
     "koa-router": "^7.4.0",
     "lodash": "^4.17.10",
     "querystring": "^0.2.0",
-    "util": "^0.10.4"
+    "util": "^0.10.4",
+    "crypto": "^1.0.1",
+    "cryptojs": "^2.5.3",
+    "path": "^0.12.7",
+    "zip-local": "^0.3.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",
