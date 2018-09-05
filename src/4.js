@@ -8,6 +8,3 @@ function PutObj(ossConf) {
   };
 }
 
-module.exports = function (ossConf) {
-  return new PutObj(ossConf);
-};
