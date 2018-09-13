@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 1.0
-
 // let  moment     =            require ('moment');
 
 // function init_mac_configToOss( ){
@@ -86,10 +81,7 @@ function url_encode(url){
 }
 console.log(url_encode(str2));
 console.log(str1);
-<<<<<<< HEAD
-console.log(str1);
-=======
-=======
+
 /*let Hashids = require('hashids');
 
 let _hashid = new Hashids('test', 16);
@@ -352,5 +344,3 @@ function func1() {
 
 }
 func1();*/
->>>>>>> a3780237c5379ac98b213ad57cb5a69b18e7a970
->>>>>>> 1.0

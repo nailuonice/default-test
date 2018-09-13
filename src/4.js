@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-//
-=======
 
 
 function PutObj(ossConf) {
@@ -14,4 +11,3 @@ function PutObj(ossConf) {
 module.exports = function (ossConf) {
   return new PutObj(ossConf);
 };
->>>>>>> a3780237c5379ac98b213ad57cb5a69b18e7a970
