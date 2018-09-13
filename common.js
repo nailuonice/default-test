@@ -8,6 +8,8 @@ console.log(str2,typeof (str2));
 let str3 = encodeURIComponent(str2);
 // console.log(str3);
 
+
+
 function url_encode(url){
   url = encodeURIComponent(url);
   url = url.replace(/\%3A/g, ":");
