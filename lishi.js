@@ -2,6 +2,10 @@ var b1 = new Buffer("asdfas");
 var _ = require('lodash');
 var sinon = require('sinon');
 
+
+
+
+
 /*//测试字符串占用几个字节
 Buffer.prototype.toByteArray = function () {
     return Array.prototype.slice.call(this, 0)
