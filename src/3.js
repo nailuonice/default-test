@@ -82,3 +82,4 @@ function url_encode(url){
 }
 console.log(url_encode(str2));
 console.log(str1);
+console.log(str1);
