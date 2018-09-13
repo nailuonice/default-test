@@ -7,9 +7,9 @@
 //   console.log(cur, curtime.getHours());
 // }
 // init_mac_configToOss();
-
 //
-// let arr =
+//
+// let arr 
 //   [
 //     {
 //       "shutdown_time": "00:00",
