@@ -12,9 +12,7 @@ fs.readdirSync(__dirname)
         const fileName = file.substring(0, file.indexOf('.'))
         const classFile = require('./' + file)
         db[fileName] = new classFile()
-      console.log(classFile, db)
+      console.log(classFile,db);
     })
 
-export {
-  db
-};
+module.exports = db

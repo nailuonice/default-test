@@ -25,9 +25,11 @@
     "koa-router": "^7.4.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
+    "mysql2": "^1.6.1",
     "path": "^0.12.7",
     "querystring": "^0.2.0",
     "readline-sync": "^1.4.9",
+    "sequelize": "^4.38.1",
     "shelljs": "^0.8.2",
     "util": "^0.10.4",
     "zip-local": "^0.3.4"
