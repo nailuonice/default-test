@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     machineCode: {
       type: DataTypes.STRING(10),
-      allowNull: false,
+      // allowNull: false,
       comment: '机器码'
     },
     is_published: {
@@ -27,7 +27,19 @@ module.exports = function (sequelize, DataTypes) {
     type: {
       type: DataTypes.INTEGER(10),
       allowNull: true,
-      comment: '配置类型 1-机器，2-机器升级,3-广告,4-贴纸'
+      comment: '配置类型 1-机器，2-机器升级, 3-广告, 4-贴纸, 5-背景，6-音频'
+    },
+    targetId: {
+      type: DataTypes.INTEGER(10),
+      allowNull: true,
+      comment: '2-机器升级 时非空，表示升级后的版本id',
+      defaultValue: null,
+    },
+    def_version: {
+      type: DataTypes.STRING(30),
+      allowNull: true,
+      comment: '2-机器升级 切换默认版本时 表示修改前的 默认版本',
+      defaultValue: '',
     }
   }, {
     tableName: 'config_factory',

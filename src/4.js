@@ -1,14 +1,5 @@
-// //
-// //
-// // let a = {a:1};
-// // let b = JSON.stringify(a);
-// // let c = JSON.parse(JSON.stringify(a));
-// // // let d = JSON.parse(JSON.parse(b));
-// //
-// // console.log(a,b,c);
-
-// const fs = require('fs');
-
+const path = require('path');
+const fs = require('fs');
 // const path = require('path');
 // // const readlineSync = require('readline-sync');
 // // const shelljs = require('shelljs');
@@ -111,21 +102,21 @@
 // arrr.slice()
 // arrr.push(4);
 // console.log(arrr,brrr,crr);
-const Axios = require('axios');
-// let admobApi_config =  "https://admob-dev.changjinglu.net/internal";
-let admobApi_config =  "http://127.0.0.1:8002/internal";
-var querystring = require('querystring');
-let admobApi = Axios.create({
-  baseURL: "http://127.0.0.1:8002/internal"
-});
+// const Axios = require('axios');
+// // let admobApi_config =  "https://admob-dev.changjinglu.net/internal";
+// let admobApi_config =  "http://127.0.0.1:8002/internal";
+// var querystring = require('querystring');
+// let admobApi = Axios.create({
+//   baseURL: "http://127.0.0.1:8002/internal"
+// });
 
-admobApi.post('/config/adv_plan', {codes: ['M030008'],type: 3})
-  .then(res => {
-    console.log('come in send /config/adv_plan, res: ', res);
-  })
-  .catch(err => {
-    console.log('admob error', err);
-  });
+// admobApi.post('/config/adv_plan', {codes: ['M030008'],type: 3})
+//   .then(res => {
+//     console.log('come in send /config/adv_plan, res: ', res);
+//   })
+//   .catch(err => {
+//     console.log('admob error', err);
+//   });
 // Axios.post('http://127.0.0.1:8002/internal/config/adv_plan', {
 
 //     codes: ['M030008'],
@@ -266,6 +257,96 @@ admobApi.post('/config/adv_plan', {codes: ['M030008'],type: 3})
 // }
 
 // func2();
+
+
+// let arr = ["158","170","133"];
+// let brr = [{"list":[],"cidList":[],"mallList":[],
+// "id":133,"title":"最新","type":1},{"list":[],"cidList":[],"mallList":[],"id":158,"title":"全部","type":1},{"list":[],"cidList":[],"mallList":[],"id":170,"title":"扫码体质","type":1}];
+// for(let [index_a, key_a] of arr.entries()) {
+//   for(let [index_b, key_b] of brr.entries()){
+//     let tmp = [];
+//     if(Number(key_a) === Number(key_b.id)  && index_a !== index_b){
+
+//     console.log(key_a, index_a,key_b, index_b);
+//     console.log(index_a, index_b);
+//       tmp = brr[index_b] ;
+//       brr[index_b] = brr[index_a];
+//       brr[index_a] = tmp;
+//     }
+//   }
+// }
+
+// console.log(arr,brr);
+
+// arr = ["","156","170",""];
+// let a = arr.filter(e=> e != '');
+// console.log(a);
+
+// function trimObj(obj, condition) {
+//   let trim = {};
+//   let keys = Object.keys(obj);
+//   keys.forEach(k => {
+//     if ((condition || [undefined, null]).indexOf(obj[k]) !== -1) {
+//       return;
+//     }
+//     trim[k] = obj[k];
+//   });
+//   return trim;
+// }
+
+// let a = {
+//   a: 'a',
+//   b: 'b',
+//   c: ''
+// }
+// console.log(a,trimObj(a));
+// let k = {...a,d: 'd'};
+// console.log(k);
+
+// function func2 (type) {
+//   let res;
+//   switch (type) {
+//     case 1: res = type;
+//       break;
+//     case 2: res = type;
+//       break;
+//     default:
+//       res = 'type is illegal';
+//   }
+//   console.log(res);
+// }
+// func2(3);
+
+let defpath = path.join(__dirname,'../');
+// fs.readdirSync();
+console.log(defpath,__filename,__dirname);
+fs.readdirSync(__dirname).filter((file)=>{    
+    file = path.join(__dirname, file);
+    return fs.lstatSync(file).isDirectory()
+}).forEach((item)=>{
+    console.log(path.basename(item));
+});
+
+
+function array_func(Arr, Brr) {
+    let a = new Set(Arr);
+    let b = new Set(Brr); 
+  
+    // 并集
+    let unionSet = new Set([...a, ...b]);
+    // 交集
+    let intersectionSet = new Set([...a].filter(x => b.has(x)));
+    // ab差集
+    let differenceABSet = new Set([...a].filter(x => !b.has(x)));
+  
+    return {
+      difference: Array.from(differenceABSet),
+      intersection: Array.from(intersectionSet),
+      union: Array.from(unionSet),
+    };
+  }
+
+  console.log(array_func([1,2,3],[2,4]));
 
 
 
