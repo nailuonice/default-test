@@ -1,23 +1,27 @@
 {
-    "server": {
-        "host":      "127.0.0.1",
-        "port":      7071,
-        "type":      "application/json"
-    },
-    "mongoDB": {
-        "testParam":  "mongodb://127.0.0.1:27017/lishi"
-    },
-    "msyql_config": {
-        "database":   "lishi",
-        "username":   "root",
-        "password":   "123456",
-        "dialect":    "mysql",
-        "host":       "127.0.0.1",
-        "port":       3306,
-        "pool": {
-            "max": 5,
-            "min": 0,
-            "idle": 10000
-        }
+  "server": {
+    "host": "127.0.0.1",
+    "port": 7071,
+    "type": "application/json"
+  },
+  "mongo": {
+    "xiaoshi": {
+      "db": "mongodb://127.0.0.1:27017/xiaoshi",
+      "database": "xiaoshi"
     }
+  },
+  "xiaoshi": {
+    "logging": false,
+    "database": "xiaoshi",
+    "username": "root",
+    "password": "123456",
+    "dialect": "mysql",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
+  }
 }

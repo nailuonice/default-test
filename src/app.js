@@ -6,6 +6,7 @@ import router from './controller';
 // import utils from './utils';
 import log4js from 'koa-log4';
 import service from './service';
+import { xiaoshiModel } from './models';
 // import { errorHandler } from './middleware';
 
 /** Class App Server */
@@ -19,6 +20,8 @@ class App {
     // this.koa.context.errors = errors;
     // this.koa.context.utils = utils;
     this.koa.context.log4js = log4js;
+
+    this.koa.context.xiaoshiModel = new xiaoshiModel(this.config.mongo.xiaoshi);
   }
 
   get koa() {

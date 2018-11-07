@@ -32,7 +32,6 @@ let koa = new App({
 }).koa;
 
 const server = koa.listen(port, function() {
-  // koa.context.admobModels.sequelize.sync();
   console.log('listening on port ' + port);
 });
 
