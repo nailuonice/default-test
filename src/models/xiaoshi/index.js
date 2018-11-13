@@ -40,7 +40,7 @@ class Models {
         model.findOne(function(err, data) {
           console.log(err, data);
         })
-        console.log('model is : ',JSON.stringify(model));
+        console.log('model is : ', model);
         self.db[this.config.database] = model;        
       }
       console.log('db is : ',JSON.stringify(self.db));

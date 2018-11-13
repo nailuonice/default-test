@@ -1,7 +1,7 @@
 'use strict';
 
 const appRoot = require('app-root-path');
-const port = process.env.npm_config_port || process.env.PORT || 8002;
+const port = process.env.npm_config_port || process.env.PORT || 8005;
 const env = process.env.npm_config_env || process.env.NODE_ENV || 'production';
 const isDebug = process.env.npm_config_debug ? true : false;
 const srcPath = isDebug ? './src' : './dist';

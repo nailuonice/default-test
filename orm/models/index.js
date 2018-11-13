@@ -3,8 +3,9 @@
 const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
-const {msyql_config} = require('../../config/config')
+const config = require('../../config/development.json')
 const db = {};
+const msyql_config = config.xiaoshi;
 
 const sequelize = new Sequelize(
     msyql_config.database, //数据库名称

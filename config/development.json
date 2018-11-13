@@ -12,7 +12,7 @@
   },
   "xiaoshi": {
     "logging": false,
-    "database": "xiaoshi",
+    "database": "lishi",
     "username": "root",
     "password": "123456",
     "dialect": "mysql",
