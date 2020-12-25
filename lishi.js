@@ -1,6 +1,6 @@
-var b1 = new Buffer("asdfas");
-var _ = require('lodash');
-var sinon = require('sinon');
+// var b1 = new Buffer("asdfas");
+// var _ = require('lodash');
+// var sinon = require('sinon');
 
 /*//测试字符串占用几个字节
 Buffer.prototype.toByteArray = function () {
@@ -29,8 +29,8 @@ var result = _(collection)
 
 console.log("222222222222 "+result);//1*/
 
-var middlewareFunc = sinon.stub();
-var middleware = sinon.stub().returns(middlewareFunc);
+// var middlewareFunc = sinon.stub();
+// var middleware = sinon.stub().returns(middlewareFunc);
 // console.warn(middlewareFunc);
 // console.warn(middleware);
 
@@ -141,3 +141,108 @@ asyncReadFile();*/
 for(var v of arr) {
     console.warn(v);
 }*/
+
+
+// let timer = setTimeout(function(timer) {
+//     console.log(timer);
+//     timer+=1;
+//     console.log(timer);
+//     },0)
+// console.log(timer);
+
+
+// function fn1(){
+//     for(var i=0;i<4;i++){
+//         var tc=setTimeout(function(i){
+//             console.log('func 1--->', i);
+//             clearTimeout(tc)
+//         },10,i);
+//     }
+// }
+// function fn2(){
+//     for(var i=0;i<4;i++){
+//         var tc = setInterval(function(i,tc){
+//             console.log('func 2--->', i);
+//             clearInterval(tc)
+//         },10,i,tc);
+//     }
+// }
+// fn1();
+// fn2();
+
+// for (var i = 1; i <= 5; i++) {
+//     setTimeout( function timer() {
+//         console.log(i);
+//     }, i * 1000 );
+//   }
+// for (let i = 1; i <= 5; i++) {
+//     setTimeout( function timer() {
+//         console.log(i);
+//     }, i * 1000 );
+//   }
+
+
+// async function async1(){
+//     console.log('async1 start')  // 同步任务
+//     await async2()  // 等待完成后 接着同步任务
+//     console.log('async1 end')
+// }
+// async function async2(){
+//     console.log('async2')
+// }
+// console.log('script start')  // 同步任务
+// setTimeout(function(){
+//     console.log('setTimeout0')  // 异步 macroTask       其实是1ms 对比setImmediate 看情况：走到timer阶段时不到1ms 则后打印
+// },0)  
+// setTimeout(function(){
+//     console.log('setTimeout3')  // 异步 macroTask
+// },3)  
+// setImmediate(() => console.log('setImmediate'));    // 下次事件循环时执行
+// process.nextTick(() => console.log('nextTick'));    // 本次事件循环前执行  newtickQueue
+// async1();
+// new Promise(function(resolve){
+//     console.log('promise1')  // 同步任务
+//     resolve();                  // 异步
+//     console.log('promise2')  // 同步任务
+// }).then(function(){
+//     console.log('promise3')     // 异步 microTask
+// })
+// console.log('script end')  // 同步任务
+
+
+// 原因nextTickQueue > microTaskQueue > macroTaskQueue
+
+// process.nextTick(() => console.log(1));
+// Promise.resolve().then(() => console.log(2));
+// process.nextTick(() => console.log(3));
+// Promise.resolve().then(() => console.log(4));
+
+//   function* fibs() {
+//     let a = 0;
+//     let b = 1;
+//     while (true) {
+//       yield a;
+//       [a, b] = [b, a + b];
+//     }
+//   }
+  
+//   let [first, second, third, fourth, fifth, sixth] = fibs();
+//   console.log(first, second, third, fourth, fifth, sixth)
+
+
+var name="global";
+function foo(){
+    console.log(name);
+}
+function fooOuter1(){
+    var name="local";
+    console.log('ddd ', name);
+    foo();
+    console.log("dsdfa ",name);
+
+    let arr = []
+    for (let i = 0; i < b.length; i++) {
+        arr.push(b+"12345678")
+    }
+}
+fooOuter1();
